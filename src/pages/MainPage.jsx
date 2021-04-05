@@ -1,17 +1,32 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import {useHistory} from 'react-router-dom'
+import Paper from '@material-ui/core/Paper'
+import AppFrame from '../components/AppFrame'
+import CityList from '../components/CityList';
 
-function MainPage(props) {
+const cities = [
+    {city:"Guadalajara",country:"Mexico"},
+    {city:"Acapulco",country:"Mexico"},
+    {city:"Madrid",country:"España"}]
+    
+function MainPage() {
+    const history = useHistory();
+
+    const onClickHandler = () =>{
+        //Permite alterar la URL por propagacion
+        history.push("/city");
+    }
+
     return (
-        <div>
-            MainPage
-        </div>
+        <AppFrame>
+            <Paper elevation={3}>
+                <CityList cities={cities} onClickCity={onClickHandler}/>
+                {/* <button onClick={onClickHandler}>Ir a City Page</button> */}
+            </Paper>
+        </AppFrame>
     )
 }
 
-MainPage.propTypes = {
-
-}
 
 export default MainPage
 

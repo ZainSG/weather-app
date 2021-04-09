@@ -3,15 +3,16 @@
  import CityList from './CityList'
 
  const listCity = [
-    {city:"Guadalajara",country:"Mexico"},
-    {city:"Acapulco",country:"Mexico"}
+    {city:"Guadalajara",country:"Mexico",countryCode: "MX"},
+    {city:"Acapulco",country:"Mexico", countryCode: "MX"},
+    {city:"Madrid",country:"España", countryCode: "ES"}
  ]
  test("CityList Render", async() =>{
-     const {findAllByRole} = render(<CityList cities={listCity}/>)
+     const {findAllByRole} = render(<CityList cities={listCity} onClickCity={()=>{}}/>)
  
      const items = await findAllByRole("button");
 
-     expect(items).toHaveLength(2);
+     expect(items).toHaveLength(3);
 })
 
 test("CityList click on item", async()=>{

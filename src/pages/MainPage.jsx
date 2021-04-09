@@ -5,9 +5,9 @@ import AppFrame from '../components/AppFrame'
 import CityList from '../components/CityList';
 
 const cities = [
-    {city:"Guadalajara",country:"Mexico"},
-    {city:"Acapulco",country:"Mexico"},
-    {city:"Madrid",country:"España"}]
+    {city:"Guadalajara",country:"Mexico",countryCode: "MX"},
+    {city:"Acapulco",country:"Mexico", countryCode: "MX"},
+    {city:"Madrid",country:"España", countryCode: "ES"}]
     
 function MainPage() {
     const history = useHistory();

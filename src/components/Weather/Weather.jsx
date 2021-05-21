@@ -7,7 +7,7 @@ import Skeleton from '@material-ui/lab/Skeleton'
 import IconState, {validValues} from '../IconState'
 import {IconContext} from 'react-icons';
 const Weather = ({temperature, state}) => {
-
+    console.log("Renderizando esto ",state)
     return (
         <Grid container item
             direction="row"
@@ -18,6 +18,7 @@ const Weather = ({temperature, state}) => {
                 {
                     state ?
                         <IconState state={state}/>
+                        
                     :
                          <Skeleton variant="circle" height={80} width={80}></Skeleton>
                 }

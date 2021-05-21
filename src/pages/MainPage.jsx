@@ -12,9 +12,12 @@ const cities = [
 function MainPage() {
     const history = useHistory();
 
-    const onClickHandler = () =>{
+    const onClickHandler = (city,countryCode) =>{
         //Permite alterar la URL por propagacion
-        history.push("/city");
+        //history.push("/city");
+        console.log("city",city)
+        console.log("Countrycode",countryCode)
+        history.push(`/city/${countryCode}/${city}`);
     }
 
     return (

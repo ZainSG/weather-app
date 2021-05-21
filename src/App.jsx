@@ -17,11 +17,11 @@ function App() {
                 <Route path="/main">
                     <MainPage/>
                 </Route>
-                <Route path="/city">
-                <CityPage/>
+                <Route path="/city/:countrycode/:city">
+                    <CityPage/>
                 </Route>
                 <Route>
-                <NotFoundPage/>
+                    <NotFoundPage/>
                 </Route>
             </Switch>
         </Router>

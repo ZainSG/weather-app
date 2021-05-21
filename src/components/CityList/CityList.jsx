@@ -19,7 +19,7 @@ const renderCityAndCountry = eventOnClickCity => (cityAndCountry,weather) =>{
         <ListItem 
             button    
             key={getCityCode(city,countryCode)} 
-            onClick={eventOnClickCity}>
+            onClick={()=> eventOnClickCity(city,countryCode)}>
             <Grid container
                 justify="center"
                 alignItems="center">
@@ -53,7 +53,7 @@ const CityList = ({cities,onClickCity}) => {
                 const {data} = res
                 const temperature = Number(convertUnits(data.main.temp).from("K").to("C").toFixed(0))
                 const state = data.weather[0].main.toLowerCase()
-    
+                console.log(state)
                 const propName = getCityCode(city,countryCode)
                 const propValue = {temperature, state}
                 
